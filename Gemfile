@@ -35,6 +35,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "capybara", '>= 2.15'
   gem "launchy"
+  gem "rails-controller-testing"
 
 end
 

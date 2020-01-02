@@ -3,10 +3,8 @@ class StartPageController < ApplicationController
 
   end
 
-
-
   def result
-    @m = params[:v1].to_i
+    @m = params[:pm].to_i
     @bin_m = ' '
     @temp_arr = Array.new()
     @ans = 0
