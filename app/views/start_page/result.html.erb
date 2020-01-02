@@ -1,27 +1,19 @@
 <H3>Введенное значение m: <%= @m %></H3>
 <H3>Решение:</H3>
-<% ans, bin_m, bin_ans, i = 0, ' ', ' ', 0 %>
 
 <table border="1" bordercolor=black>
   <tr><td> № </td><td> Ответ </td><td> дв. ответ </td><td> дв. m </td></tr>
-  <% while @m > 0 do %>
+  <% @temp_arr.size.times do |i| %>
     <tr>
 
-    <% ans = ans * 2 + (@m % 2) %>
-    <% bin_ans = bin_ans + (@m % 2).to_s %>
-    <% bin_m = (@m % 2).to_s + bin_m%>
-
     <td><%= i %></td>
-    <td><%= ans %></td>
-    <td><%= bin_ans %></td>
-    <td><%= bin_m %></td>
+    <td><%= @temp_arr[i][0] %></td>
+    <td><%= @temp_arr[i][1] %></td>
+    <td><%= @temp_arr[i][2] %></td>
 
-    <% @m = @m / 2 %>
-    <% i = i + 1 %>
-
-  </tr>
+    </tr>
   <% end %>
 </table>
 
-<p>m в двоичной форме: <%= bin_m %></p>
-<p>Ответ: <%= ans %> В двоичной форме: <%= bin_ans %></p>
+<p>m в двоичной форме: <%= @bin_m %></p>
+<p>Ответ: <%= @ans %> В двоичной форме: <%= @bin_ans %></p>
