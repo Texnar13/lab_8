@@ -1,14 +1,14 @@
 class StartPageController < ApplicationController
   def index ()
-
+    render layout: false
   end
 
   def result
     @m = params[:pm].to_i
-    @bin_m = ' '
+    @bin_m = ''
     @temp_arr = Array.new()
     @ans = 0
-    @bin_ans = ' '
+    @bin_ans = ''
 
     i = 0
     temp_m = @m
@@ -29,5 +29,13 @@ class StartPageController < ApplicationController
       temp_m = temp_m / 2
       i = i + 1
     end
+
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: {arr: @temp_arr, m: @m, bin_m: @bin_m, answer: @ans, bin_answer: @bin_ans}
+      end
+    end
+
   end
 end

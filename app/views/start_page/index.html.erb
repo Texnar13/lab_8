@@ -1,10 +1,67 @@
-<H3>Начальная страница</H3>
-<H2>Марчук Иван ИУ6-31б Вариант 16</H2>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>AJAX calc test</title>
+  <script type="text/javascript">
+    calc_url = location.protocol + "//" + location.host +"/result.json";
 
-<!-- форма ввода отправляющая метод get на страничку result  -->
-<%= form_tag("/result", :method => "get") do %>
-  <%= label_tag("Введите число m:") %>
-  <%= number_field_tag(:pm) %>
-  <br/>
-  <%= submit_tag("Посчитать") %>
-<% end %>
+    function send_query(){
+      var frm = document.forms.result_form;
+      var param_str = "";
+
+      param_str = "?" +"pm=" + Math.abs(frm.v1.value);
+
+      var my_JSON_object = {};
+      var http_request = new XMLHttpRequest();
+      http_request.open("GET", calc_url+param_str, true);
+
+      http_request.onreadystatechange = function () {
+        var done = 4, ok = 200;
+        if (http_request.readyState == done && http_request.status == ok) {
+          my_JSON_object = JSON.parse(http_request.responseText);
+          show_result(my_JSON_object);
+        }
+      };
+      http_request.send(null);
+      return false;
+    }
+
+    function show_result(data){
+
+      var result = document.getElementById("result");
+      // формируем html ответа
+      var html_answer = "<H3>Введенное значение m:"+ data.m +"</H3>"+
+      "<H3>Решение:</H3>" + "<p>"+ Date() + "</p>"+
+        "<table border='1' bordercolor=black>" +
+        "<tbody><tr><td> № </td><td> Ответ </td><td> дв. ответ </td><td> дв. m </td></tr>";
+      for (var i = 0; i < data.arr.length; i++) {
+        html_answer += "<tr>" +
+          "<td>" + (i+1) + "</td>"+
+          "<td>" + data.arr[i][0] + "</td>" +
+          "<td>" + data.arr[i][1] + "</td>" +
+          "<td>" + data.arr[i][2] + "</td>" +
+          "</tr>";
+      }
+      html_answer += ("</tbody></table>"+
+      "<p>m в двоичной форме:"+ data.bin_m +"</p><p>Ответ:" + data.answer + " В двоичной форме:" + data.bin_answer + "</p>");
+      // выводим html ответа
+      result.innerHTML = html_answer;
+    }
+
+  </script>
+</head>
+<body>
+
+  <H3>Начальная страница</H3>
+  <H2>Марчук Иван ИУ6-31б Вариант 16</H2>
+  <!-- форма ввода отправляющая метод get на страничку result  -->
+  <form name="result_form" method="get">
+    <label for="Value_1:">Введите число m:</label>
+    <input id="v1" name="v1" type="number" />
+    <br/>
+    <input name="commit" type="submit" value="Посчитать" onclick="return send_query();" />
+  </form>
+  <div id="result"></div>
+
+</body>
