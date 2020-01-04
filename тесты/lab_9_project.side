@@ -1,0 +1,203 @@
+{
+  "id": "c3710a73-97b7-48b7-8579-6c6cfbf015cb",
+  "version": "2.0",
+  "name": "lab_9_project",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "da556d84-9a2b-461d-a0c7-5ca0ea4accf3",
+    "name": "my first test",
+    "commands": [{
+      "id": "0f5253d5-9b40-413f-9c9f-d779750255b9",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "27d14190-0a2b-4de9-a795-9f98eddf8d21",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b867bf2b-44c2-42dc-be46-ba9bb14a1e36",
+      "comment": "",
+      "command": "click",
+      "target": "id=v1",
+      "targets": [
+        ["id=v1", "id"],
+        ["name=v1", "name"],
+        ["css=#v1", "css:finder"],
+        ["xpath=//input[@id='v1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7427caaa-b7cd-45c9-b915-99e7b2f87115",
+      "comment": "",
+      "command": "type",
+      "target": "id=v1",
+      "targets": [
+        ["id=v1", "id"],
+        ["name=v1", "name"],
+        ["css=#v1", "css:finder"],
+        ["xpath=//input[@id='v1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "144"
+    }, {
+      "id": "87e7e9dd-1108-48de-9fb5-dad126eaa5c7",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9777c60f-c3ed-457a-a980-97f955309a9f",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "id=result",
+      "targets": [
+        ["id=result", "id"],
+        ["css=#result", "css:finder"],
+        ["xpath=//div[@id='result']", "xpath:attributes"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": "300"
+    }, {
+      "id": "cd40341c-4107-4b17-8a21-4bca6bc3375a",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p:nth-child(6)",
+      "targets": [
+        ["css=p:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='result']/p[3]", "xpath:idRelative"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Ответ:9 В двоичной форме:00001001')]", "xpath:innerText"]
+      ],
+      "value": "Ответ:9 В двоичной форме:00001001"
+    }, {
+      "id": "e7c8bb28-1b7f-4fcb-8e93-9322f5a20ff8",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "42efaeb7-0cb3-43ad-84d5-6ad23f5304d5",
+    "name": "test (value 1000)",
+    "commands": [{
+      "id": "5bf4ea24-145f-4d70-9264-b1c06fcb2556",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3000/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8cdac572-7454-44c9-9861-40df1d33d3f3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "737x864",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68cadc43-c099-4f16-b658-bb3246bf07de",
+      "comment": "",
+      "command": "click",
+      "target": "id=v1",
+      "targets": [
+        ["id=v1", "id"],
+        ["name=v1", "name"],
+        ["css=#v1", "css:finder"],
+        ["xpath=//input[@id='v1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "00cffcd3-4c9d-4aa7-83ef-ff73b944f810",
+      "comment": "",
+      "command": "type",
+      "target": "id=v1",
+      "targets": [
+        ["id=v1", "id"],
+        ["name=v1", "name"],
+        ["css=#v1", "css:finder"],
+        ["xpath=//input[@id='v1']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1000"
+    }, {
+      "id": "f5eef03c-2db2-40f1-a025-b16fc4f916a0",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf930873-3c8c-437d-a014-5bf7a2f661cd",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "id=result",
+      "targets": [
+        ["id=result", "id"],
+        ["css=#result", "css:finder"],
+        ["xpath=//div[@id='result']", "xpath:attributes"],
+        ["xpath=//div[4]", "xpath:position"]
+      ],
+      "value": "300"
+    }, {
+      "id": "f30adadc-898e-4b4a-b6a3-15052283a999",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p:nth-child(5)",
+      "targets": [
+        ["css=p:nth-child(5)", "css:finder"],
+        ["xpath=//div[@id='result']/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'m в двоичной форме:1111101000')]", "xpath:innerText"]
+      ],
+      "value": "m в двоичной форме:1111101000"
+    }, {
+      "id": "12582b77-0200-4a8f-9f92-8884299b1514",
+      "comment": "",
+      "command": "verifyText",
+      "target": "css=p:nth-child(6)",
+      "targets": [
+        ["css=p:nth-child(6)", "css:finder"],
+        ["xpath=//div[@id='result']/p[3]", "xpath:idRelative"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Ответ:95 В двоичной форме:0001011111')]", "xpath:innerText"]
+      ],
+      "value": "Ответ:95 В двоичной форме:0001011111"
+    }, {
+      "id": "6f551efa-a750-441b-a292-d30f6b4027d6",
+      "comment": "",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "e99ef487-4001-443d-88b7-ba250b581390",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["da556d84-9a2b-461d-a0c7-5ca0ea4accf3"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
