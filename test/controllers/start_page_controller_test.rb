@@ -6,27 +6,10 @@ class StartPageControllerTest < ActionDispatch::IntegrationTest
   # end
 
   test 'test get root page' do
-    get root_path
+    get root_path, params: {pm: 4, format: 'xml'}
     assert_response :success
-  end
 
-  test 'test get view page' do
-    get '/result'
-    assert_response :success
+    assert_equal('xml', assigns[:format])
   end
-
-  # удалить если показывать
-  #test "empty get" do
-  #  get '/result'
-  #  assert_equal assigns[:bin_m], ' '
-  #  assert_equal assigns[:ans], 0
-  #  assert_equal assigns[:bin_ans], ' '
-  #end
-  #test "get with param m = 144" do
-  #  get '/result', params: {mp: 144}
-  #  assert_equal " 10010000", assigns[:bin_m]
-  #  assert_equal 9, assigns[:ans]
-  #  assert_equal " 00001001", assigns[:bin_ans]
-  #end
 
 end
