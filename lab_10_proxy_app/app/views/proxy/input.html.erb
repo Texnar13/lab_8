@@ -1,6 +1,6 @@
 <%= form_tag  url_for(controller: :proxy, action: :output), method: 'get' do %>
   <label>Введите число m:</label>
-  <input type = "number" pattern = "^[\d]+$" name = "pm_enter_name" id = "pm" placeholder="144" />
+  <input type = "number" pattern = "^[\d]+$" name = "pm_enter" id = "pm" placeholder="144" />
   <div>
     <label>Отдать с обработкой на стороне</label>
     <select class="custom-select" name = "side">

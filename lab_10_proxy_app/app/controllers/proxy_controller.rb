@@ -7,7 +7,8 @@ class ProxyController < ApplicationController
 
 
   before_action :parse_params, only: :output
-  def outputmy_url = URL + "&val=#{@val}"
+  def output
+    my_url = "http://localhost:3000/?&pm=#{@cl_pm}&format=xml"
     api_response = open(my_url)
 
     if @side == 'server-xslt'
@@ -23,22 +24,18 @@ class ProxyController < ApplicationController
 
   private
 
-  URL = 'http://localhost:3000/?format=xml'.freeze
-  SERV_TRANS = "#{Rails.root}/public/server_transform.xslt".freeze
-  BROWS_TRANS = '/browser_transform.xslt'.freeze
-
   def parse_params
-    @val = params[:pm]
+    @cl_pm = params[:pm_enter]
     @side = params[:side]
   end
 
-  def xslt_transform(data, transform: SERV_TRANS)
+  def xslt_transform(data, transform: "#{Rails.root}/public/server_transform.xslt")
     doc = Nokogiri::XML(data)
     xslt = Nokogiri::XSLT(File.read(transform))
     xslt.transform(doc)
   end
 
-  def insert_browser_xslt(data, transform: BROWS_TRANS)
+  def insert_browser_xslt(data, transform: '/browser_transform.xslt')
     doc = Nokogiri::XML(data)
     xslt = Nokogiri::XML::ProcessingInstruction.new(doc, 'xml-stylesheet', 'type="text/xsl" href="' + transform + '"')
     doc.root.add_previous_sibling(xslt)

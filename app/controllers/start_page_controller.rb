@@ -26,14 +26,14 @@ class StartPageController < ApplicationController
 
       # ячейки строки
       temp_arr[-1][0] = ans
-      temp_arr[-1][1] = number_or_nil(bin_ans)
-      temp_arr[-1][2] = number_or_nil(bin_m)
+      temp_arr[-1][1] = bin_ans
+      temp_arr[-1][2] = bin_m
 
       temp_m = temp_m / 2
       i = i + 1
     end
 
-    return {qestion_m: m, bin_m: number_or_nil(bin_m), temp_arr: temp_arr, ans: ans, bin_ans: number_or_nil(bin_ans)}
+    return {qestion_m: m, bin_m: bin_m, temp_arr: temp_arr, ans: ans, bin_ans: bin_ans}
 
   end
 
@@ -56,7 +56,7 @@ class StartPageController < ApplicationController
 
 
   def parse_params
-   @m = params[:pm].to_i
+   @m = number_or_nil(params[:pm])
    @format = params[:format]
   end
 
