@@ -1,9 +1,9 @@
 class StartPageController < ApplicationController
 
-  def number_or_nil(string)
-    Integer(string || '')
+  def number_or_zero(string)
+    Integer(string || 0)
   rescue ArgumentError
-    nil
+    0
   end
 
   def my_calc_method(qestion_m)
@@ -56,7 +56,7 @@ class StartPageController < ApplicationController
 
 
   def parse_params
-   @m = number_or_nil(params[:pm])
+   @m = number_or_zero(params[:pm])
    @format = params[:format]
   end
 
