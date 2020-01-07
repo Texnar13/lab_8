@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Список пользователей:</h3>
+
+<table border = "1">
+  <thead>
+    <tr>
+      <th>Почта</th>
+      <!--th>Password</th-->
+      <th>    </th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.size.times do |i| %>
+      <tr>
+        <td><%= @users[i].mail %></td>
+        <!--td>< %= user.password %></td-->
+        <td>    </td>
+        <td>
+          <%= link_to 'Показать', "/users/#{@users[i][:id]}" %>
+          <%= link_to 'Редактировать', "/users/#{@users[i][:id]}/edit"%>
+          <%= link_to 'Удалить', "/users/#{@users[i][:id]}/destroy", method: :delete, data: { confirm: 'Вы действительно хотите удалить пользователя?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый пользователь', '/signup' %>

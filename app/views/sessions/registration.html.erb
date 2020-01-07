@@ -1,0 +1,17 @@
+<h2>Марчук Иван ИУ6-31б Вариант 16</h2>
+<h4>Вход в систему(попробуйте логин:admin@yandex.ru пароль:admin)</h4>
+
+<!-- форма входа -->
+<%= form_tag('/login', :method => "post") do %>
+  <%= label_tag("Почта:") %>
+  <%= text_field_tag(:mail) %>
+  <br/>
+  <%= label_tag("Пароль:") %>
+  <%= password_field_tag(:password) %>
+  <br/>
+  <%= submit_tag("Вход") %>
+<% end %>
+<br/>
+Нет учетной записи? <%= link_to 'Регистрация', '/signup' %>
+<br/>
+<%= link_to 'Список всех пользователей', '/users' %>
