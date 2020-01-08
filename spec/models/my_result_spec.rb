@@ -13,14 +13,13 @@ RSpec.describe MyResult, type: :model do
 
   context 'if program trying to add not valid options' do
     it 'should say that not valid input is not valid' do
-      exs = MyResult.find_by(pm: 300)
-      MyResult.new(pm: 300, result: '{"result":[[0], ["0"], ["0"]]}').save if exs.nil?
-      expect(MyResult.new(pm: 300).valid?).to be_falsy
-      MyResult.find_by(pm: 300).destroy
+      exs = MyResult.find_by(pm: 144)
+      MyResult.new(pm: 144, result: '{"result":[[0], ["0"], ["0"]]}').save if exs.nil?
+      expect(MyResult.new(pm: 144).valid?).to be_falsy
+      MyResult.find_by(pm: 144).destroy
       unless exs.nil?
-        MyResult.new(pm: 300, result: exs.result).save
+        MyResult.new(pm: 144, result: exs.result).save
       end
     end
   end
-
 end

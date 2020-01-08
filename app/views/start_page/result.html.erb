@@ -16,5 +16,5 @@
   <% end %>
 </table>
 
-<p>m в двоичной форме: <%= @temp_arr[-1][2] %></p>
-<p>Ответ: <%= @temp_arr[-1][0] %> В двоичной форме: <%= @temp_arr[-1][1] %></p>
+<p>m в двоичной форме: <%= @temp_arr[-1][2] if @temp_arr.size > 0 %></p>
+<p>Ответ: <%= @temp_arr[-1][0] if @temp_arr.size > 0 %> В двоичной форме: <%= @temp_arr[-1][1] if @temp_arr.size > 0 %></p>
