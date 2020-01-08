@@ -1,5 +1,14 @@
-<h1>Добавленипе пользователя</h1>
+<h3>Добавленипе пользователя</h3>
 
-<%= render 'form', user: @user %>
 
-<%= link_to 'Back', '/' %>
+<%= form_tag('/users', :method => "post") do %>
+  <%= label_tag("Почта:") %>
+  <%= text_field_tag(:mail) %>
+  <br/>
+  <%= label_tag("Пароль:") %>
+  <%= password_field_tag(:password) %>
+  <br/>
+  <%= submit_tag("Добавить") %>
+<% end %>
+
+<%= link_to 'Назад', '/' %>
